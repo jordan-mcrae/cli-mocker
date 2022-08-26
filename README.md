@@ -2,7 +2,7 @@
 This mini utility is used to help mock your CLI tools when writing tests in frameworks like Mocha or Jest. It will spawn your CLI tool, and synchronously execute an array of predefined commands you provide like arrow/enter keys, text inputs, etc.
 
 ## Install
-`yarn add cli-mocker`\
+`yarn add cli-mocker --dev`\
 or\
 `npm install cli-mocker --save-dev`
 
@@ -68,3 +68,5 @@ describe('Test CLI', function() {
 
 ## Contributing
 Pull requests and feature requests are welcomed!
+
+Husky is set up to run linting and formatting before commits.
