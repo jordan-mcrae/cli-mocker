@@ -11,7 +11,7 @@ or\
 ```js
 import { run } = from 'cli-mocker';
 
-const { output, lastOutput } = await runCLI('npx my-cli-command', [/* COMMANDS */]);
+const { output, lastOutput } = await run('npx my-cli-command', [/* COMMANDS */]);
 ```
 
 ## Available Inputs and Commands
@@ -55,7 +55,7 @@ const { expect } = chai;
 
 describe('Test CLI', function() {
   it('Runs', async () => {
-    const { output, lastOutput } = await runCLI('npx my-cli-command', [
+    const { output, lastOutput } = await run('npx my-cli-command', [
       // Press down arrow key
       DOWN,
       // Press enter
