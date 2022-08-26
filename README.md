@@ -6,8 +6,16 @@ This mini utility is used to help mock your CLI tools when writing tests in fram
 or\
 `npm install cli-mocker --save-dev`
 
-## Available Inputs
-Currently, this library supports the following inputs:
+## Usage
+
+```js
+import { run } = from 'cli-mocker';
+
+const { output, lastOutput } = await runCLI('npx my-cli-command', [/* COMMANDS */]);
+```
+
+## Available Inputs and Commands
+Commands run synchronously, so the order of the commands that you use matters. Currently, this library supports the following inputs:
 
 #### Up arrow key
 ```js
@@ -30,7 +38,7 @@ import { EXIT } from 'cli-mocker';
 ```
 
 #### String inputs
-You can pass any string argument to your cli
+You can pass any string argument to your cli. For example, filling in an input prompt with "hello, world!".
 
 ## Example with Mocha
 ```js
@@ -47,7 +55,7 @@ const { expect } = chai;
 
 describe('Test CLI', function() {
   it('Runs', async () => {
-    const { output, lastOutput } = await runCLI([
+    const { output, lastOutput } = await runCLI('npx my-cli-command', [
       // Press down arrow key
       DOWN,
       // Press enter
