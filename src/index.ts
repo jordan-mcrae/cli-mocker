@@ -7,12 +7,17 @@ export const ENTER = '\x0D';
 export const SPACE = '\x20';
 export const EXIT = 'exit 0';
 
-type Commands = typeof DOWN | typeof UP | typeof ENTER | typeof SPACE | typeof EXIT;
+type Commands = typeof DOWN | typeof UP | typeof ENTER | typeof SPACE | typeof EXIT | string;
+
+interface RunResult {
+  outputs: string[];
+  lastOutput: string;
+}
 
 const COMMAND_DELAY_MS = 250;
 
 export const run = async (command: string, inputs: Commands[]) =>
-  new Promise(async (resolve) => {
+  new Promise<RunResult>(async (resolve) => {
     const outputs: string[] = [];
     const proc: cp.ChildProcess = cp.exec(command);
 
