@@ -9,7 +9,7 @@ or\
 ## Usage
 
 ```js
-import { run } = from 'cli-mocker';
+import { run } from 'cli-mocker';
 
 const { output, lastOutput } = await run('npx my-cli-command', [/* COMMANDS */]);
 ```
@@ -49,7 +49,7 @@ import {
   DOWN,
   ENTER,
   EXIT
-} = from 'cli-mocker';
+} from 'cli-mocker';
 
 const { expect } = chai;
 
